@@ -4,7 +4,8 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
-import App from "../App";
+import LandingPage from "../pages/LandingPage";
+import Layout from "../components/layout/Layout";
 
 export default function Navigation() {
     return (
@@ -12,7 +13,9 @@ export default function Navigation() {
             <Routes>
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
-                <Route path="/" element={<App />} />
+                <Route path="/" element={<Layout />}>
+                    <Route index element={<LandingPage />} />
+                </Route>
             </Routes>
         </Router>
     );
